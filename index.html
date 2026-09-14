@@ -6,69 +6,167 @@
 <title>HarbourSign — Uninsured form drafting for St. John's physicians</title>
 <meta name="description" content="Manual document-preparation service for St. John's family physicians. Send the blank form and de-identified facts; receive a finished draft the same day. $15 per form.">
 <style>
-:root{--ink:#10222f;--harbour:#14486b;--sky:#3d7ea6;--foam:#f4f8fa;--line:#d8e2e8;--accent:#b3541e;}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:#fff;}
-.wrap{max-width:880px;margin:0 auto;padding:0 20px;}
-header{background:var(--harbour);color:#fff;padding:14px 0;}
-header .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
-.logo{font-size:1.25rem;font-weight:700;letter-spacing:.02em;}
-.logo span{color:#9cd0ea;}
-header nav a{color:#dcebf4;text-decoration:none;font-size:.9rem;margin-left:16px;}
-header nav a:hover{color:#fff;}
-header nav a.cta{border:1.5px solid #9cd0ea;border-radius:6px;padding:6px 14px;margin-left:12px;color:#fff;}
-header nav a.cta:hover{background:rgba(255,255,255,.12);border-color:#fff;}
-.hero{background:var(--foam);border-bottom:1px solid var(--line);padding:56px 0 48px;text-align:center;}
-.hero h1{font-size:clamp(1.7rem,4.5vw,2.5rem);line-height:1.2;margin-bottom:14px;max-width:640px;margin-left:auto;margin-right:auto;}
-.hero p{max-width:560px;margin:0 auto 26px;font-size:1.05rem;color:#3c4f5c;}
-.price-tag{display:inline-block;background:#fff;border:1px solid var(--line);color:var(--harbour);font-weight:700;font-size:1.05rem;padding:8px 18px;border-radius:999px;}
-.price-tag small{font-weight:500;color:#3c4f5c;}
-.hero-cta{margin-top:22px;}
-.btn{display:inline-block;background:var(--harbour);color:#fff;text-decoration:none;font-weight:700;padding:14px 30px;border-radius:8px;font-size:1.05rem;}
-.btn:hover{background:var(--sky);}
-section{padding:48px 0;}
-section:nth-of-type(even){background:var(--foam);}
-h2{font-size:1.45rem;margin-bottom:20px;color:var(--harbour);}
-.steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));counter-reset:step;}
-.step{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px;}
-.step h3{font-size:1rem;margin-bottom:6px;}
-.step p{font-size:.92rem;color:#3c4f5c;}
-.step::before{counter-increment:step;content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--sky);color:#fff;font-weight:700;font-size:.9rem;margin-bottom:10px;}
-ul.plain{list-style:none;}
-ul.plain li{padding:10px 0;border-bottom:1px solid var(--line);}
-ul.plain li:last-child{border-bottom:none;}
-.privacy{background:#fff;border-left:5px solid var(--sky);padding:20px 22px;border-radius:0 8px 8px 0;}
-.privacy p{margin-bottom:10px;}
-.privacy p:last-child{margin-bottom:0;}
-.pricing-box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:30px;text-align:center;max-width:520px;margin:0 auto;}
-.pricing-box .big{font-size:2.4rem;font-weight:800;color:var(--harbour);}
-.pricing-box ul{text-align:left;margin:18px 0 0;list-style:none;}
-.pricing-box li{padding:6px 0 6px 26px;position:relative;font-size:.95rem;}
-.pricing-box li::before{content:"✓";position:absolute;left:0;color:var(--sky);font-weight:700;}
-details{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin-bottom:10px;}
-details summary{font-weight:600;cursor:pointer;}
-details p{margin-top:10px;font-size:.95rem;color:#3c4f5c;}
-.about{display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap;}
-.about .photo{flex:0 0 160px;height:200px;background:linear-gradient(160deg,#dcebf4,#a9c8da);border-radius:10px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.85rem;color:#42607a;padding:10px;}
-.about .bio{flex:1 1 320px;}
-.about img.photo{object-fit:cover;}
-.contact{text-align:center;}
-.contact .phone{margin-top:18px;font-size:1.15rem;}
-.contact .phone strong{color:var(--harbour);}
-.contact .phone a{color:inherit;text-decoration:none;}
-footer{background:#10222f;color:#b8c6d2;padding:30px 0;font-size:.85rem;}
-footer a{color:#dcebf4;}
-footer .wrap p{margin-bottom:8px;}
-@media(max-width:600px){header .wrap{justify-content:center;}header nav a{margin:0 10px;}}
+:root{--ink:#142f43;--muted:#506573;--teal:#286b69;--teal-light:#dceceb;--paper:#f8f8f4;--line:#dce3df;--white:#fff;--serif:Georgia,"Times New Roman",serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:#c4e1dc;color:var(--ink)}
+a{color:var(--teal);text-underline-offset:4px}
+a:hover{color:var(--ink)}
+a,summary{-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid #bd7b3b;outline-offset:5px;border-radius:3px}
+img{max-width:100%;display:block}
+.wrap{width:min(1180px,100% - 96px);margin-inline:auto}
+.skip-link{position:fixed;top:12px;left:12px;transform:translateY(-180%);z-index:30;background:var(--ink);color:white;padding:12px 20px}
+.skip-link:focus{transform:translateY(0);color:white}
+header{background:rgba(248,248,244,.97);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+header .wrap{min-height:96px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);flex-shrink:0}
+.logo img{width:43px;height:48px;object-fit:contain}
+.wordmark{font-size:26px;font-weight:650;letter-spacing:-1.1px;line-height:1.1}
+.wordmark span{color:var(--teal)}
+.wordmark small{display:block;font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--muted);margin-top:8px}
+nav{display:flex;align-items:center;gap:29px}
+nav a{font-size:13px;font-weight:600;text-decoration:none;color:var(--muted);padding-block:12px;white-space:nowrap}
+nav a:hover{color:var(--teal)}
+nav a.cta{padding:11px 21px;background:var(--ink);color:white;border-radius:5px}
+nav a.cta:hover{background:var(--teal)}
+.eyebrow{display:block;color:var(--teal);font-size:10px;font-weight:750;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;line-height:1.7}
+.eyebrow .dot{display:inline-block;width:6px;height:6px;background:var(--teal);border-radius:50%;margin:0 9px 1px 0}
+.hero{padding:76px 0 0;background:radial-gradient(ellipse at 87% 38%,#e5efea80,transparent 48%)}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-1.9px;text-wrap:balance}
+h1{font-size:clamp(43px,4.6vw,65px);line-height:1.1;margin-bottom:25px}
+h1 em{color:var(--teal);font-weight:400}
+.hero-copy>p{font-size:15px;line-height:1.85;max-width:510px;color:var(--muted)}
+.hero-cta{display:flex;align-items:center;flex-wrap:wrap;gap:22px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:23px;padding:15px 24px;background:var(--teal);border:1px solid transparent;border-radius:5px;color:white;font-size:13px;font-weight:650;text-decoration:none;min-height:50px;transition:background .18s ease,box-shadow .18s ease}
+.btn::after{content:"↗";font-size:18px;font-weight:400;line-height:1}
+.btn:hover{background:var(--ink);color:white;box-shadow:0 4px 12px #142f4310}
+.price-tag{font-size:13px;color:var(--ink);font-weight:700;white-space:nowrap}
+.price-tag small{display:block;font-size:10px;color:var(--muted);font-weight:500;letter-spacing:.7px;margin-top:1px}
+.workflow-art{position:relative;padding:30px 13px 36px 18px;max-width:490px;width:100%;margin-inline:auto}
+.art-label{font-size:9px;color:var(--muted);letter-spacing:1.7px;text-transform:uppercase;text-align:center;margin-bottom:26px;font-weight:650}
+.paper-stack{position:relative;background:#fff;border:1px solid #d9e1db;border-radius:7px;padding:30px 31px 25px;box-shadow:0 20px 50px #23443e09;transform:rotate(-3deg);margin-right:22px}
+.paper-stack::before{content:"";position:absolute;inset:9px -10px -10px 9px;border:1px solid #d7dfd8;background:#f1f3ed;border-radius:7px;z-index:-1;transform:rotate(5deg)}
+.paper-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:20px;font-size:10px;font-weight:600;color:var(--muted)}
+.paper-head img{width:30px;height:34px;object-fit:contain}
+.document-kicker{font-size:9px;letter-spacing:1.6px;color:var(--muted);text-transform:uppercase;margin-top:23px}
+.document-title{font-family:var(--serif);font-size:29px;line-height:1.15;margin-top:6px;letter-spacing:-.6px}
+.document-title span{color:var(--teal)}
+.document-facts{border:1px solid #dbe6df;background:#f5f8f4;border-radius:4px;padding:12px 13px;font-size:10px;color:var(--teal);display:flex;align-items:center;gap:9px;margin-top:22px}
+.check{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:var(--teal-light);color:var(--teal);font-size:11px;flex-shrink:0}
+.document-lines{display:grid;gap:9px;padding:23px 0 24px}
+.document-lines i{height:5px;background:#e6eae4;border-radius:2px;width:100%}
+.document-lines i:nth-child(2){width:83%}
+.document-lines i:nth-child(3){width:92%}
+.document-lines i:nth-child(4){width:61%}
+.document-bottom{border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:10px;color:var(--muted)}
+.document-bottom b{font-weight:500;color:var(--teal);font-size:9px;letter-spacing:.7px}
+.review-note{position:absolute;bottom:7px;right:0;background:var(--ink);color:#fff;padding:15px 21px;display:flex;align-items:center;gap:13px;border-radius:5px;box-shadow:0 8px 24px #142f4312;transform:rotate(2deg)}
+.review-note>span{font-size:21px;color:#9fd2c7}
+.review-note p{font-size:12px;line-height:1.5;font-weight:600}
+.review-note small{font-size:10px;font-weight:400;color:#c7d8da}
+.hero-foot{display:flex;gap:28px;justify-content:space-between;margin-top:68px;padding:22px 0;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+.hero-foot span{display:flex;align-items:center;gap:9px}
+.hero-foot b{font-weight:600;color:var(--teal);font-size:13px}
+section{padding:86px 0;scroll-margin-top:15px}
+h2{font-size:43px;line-height:1.15;margin-bottom:30px}
+h3{font-size:15px;line-height:1.5;font-weight:650;letter-spacing:-.2px}
+.section-intro{display:flex;justify-content:space-between;gap:36px;align-items:flex-end;margin-bottom:36px}
+.section-intro h2{margin-bottom:0}
+.section-note{font-size:12px;color:var(--muted);max-width:250px}
+#how{border-top:1px solid var(--line);background:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:27px;counter-reset:step}
+.step{border-top:1px solid var(--line);padding-top:22px}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:var(--serif);font-size:31px;color:var(--teal);line-height:1;display:block;margin-bottom:24px}
+.step h3{margin-bottom:10px}
+.step p{font-size:13px;color:var(--muted);line-height:1.85}
+.split{display:grid;grid-template-columns:.82fr 1.5fr;gap:82px}
+.split h2{max-width:290px}
+.plain{list-style:none;counter-reset:form}
+.plain li{position:relative;padding:21px 0 23px 46px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);line-height:1.8}
+.plain li:last-child{border-bottom:1px solid var(--line)}
+.plain li::before{counter-increment:form;content:"0" counter(form);position:absolute;left:0;top:23px;color:var(--teal);font-size:11px}
+.plain strong{display:block;font-size:16px;color:var(--ink);margin-bottom:5px;font-weight:600}
+#privacy{background:var(--ink);color:#e6efef;position:relative}
+#privacy .eyebrow{color:#a4ccc4}
+#privacy h2{color:#fff}
+.privacy p{font-size:14px;line-height:1.95;color:#c9d8de;margin-bottom:20px}
+.privacy p:last-child{margin-bottom:0}
+.privacy strong{display:block;font-family:var(--serif);font-weight:400;font-size:23px;line-height:1.45;color:#fff;margin-bottom:20px;letter-spacing:-.4px}
+.privacy-boundary{display:inline-flex;align-items:center;gap:11px;border-top:1px solid #446171;padding-top:20px;color:#a9c9c5;font-size:11px;margin-top:16px}
+.privacy-boundary svg{width:18px;height:18px;flex-shrink:0}
+#price{background:#eef3ed}
+.pricing-box{background:#fff;border:1px solid #dbe3d9;border-radius:8px;padding:38px 40px;display:grid;grid-template-columns:.8fr 1.25fr;gap:44px}
+.pricing-box .big{font-family:var(--serif);font-size:78px;line-height:1;letter-spacing:-5px;color:var(--ink)}
+.pricing-box .big small{font-family:var(--sans);font-size:11px;letter-spacing:.5px;color:var(--muted);margin-left:9px}
+.pricing-box p{font-size:12px;color:var(--muted);margin-top:15px;line-height:1.8;max-width:220px}
+.pricing-box ul{list-style:none;border-left:1px solid var(--line);padding-left:33px}
+.pricing-box li{font-size:12px;line-height:1.8;color:var(--muted);padding:7px 0 7px 24px;position:relative}
+.pricing-box li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:650}
+.pricing-top{display:flex;justify-content:space-between;gap:25px;align-items:center;margin-bottom:27px}
+.pricing-top h2{margin:0}
+.pricing-top .eyebrow{margin-bottom:9px}
+.pricing-top>p{font-size:12px;color:var(--muted)}
+.faq{background:#fff}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:14px;font-weight:550;cursor:pointer;padding:21px 0;min-height:64px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--teal);font-size:23px;line-height:1;font-weight:300;flex-shrink:0}
+details[open] summary::after{content:"−"}
+details[open] summary{color:var(--teal)}
+details p{font-size:13px;color:var(--muted);line-height:1.85;padding:0 32px 24px 0}
+.founder{padding:0 0 80px;background:#fff}
+.founder-box{border:1px solid var(--line);border-radius:7px;padding:35px 40px;display:grid;grid-template-columns:.82fr 1.5fr;gap:82px}
+.founder-box h2{font-size:30px;margin:0;letter-spacing:-1px}
+.founder-box .eyebrow{margin-bottom:10px}
+.about{display:flex;align-items:center;gap:22px}
+.monogram{width:76px;height:86px;border-radius:5px;background:var(--teal-light);color:var(--teal);font-family:var(--serif);font-size:29px;display:flex;align-items:center;justify-content:center;flex-shrink:0;letter-spacing:-1px}
+.bio p{font-size:12px;color:var(--muted);line-height:1.85}
+.bio strong{font-size:16px;font-weight:600;color:var(--ink)}
+.contact{background:#e4eeea;text-align:center;padding:78px 0 70px}
+.contact .wrap{max-width:740px}
+.contact h2{font-size:52px;margin-bottom:22px}
+.contact .eyebrow{margin-bottom:18px}
+.contact .contact-intro{font-size:14px;color:var(--muted);line-height:1.85;max-width:560px;margin:0 auto 26px}
+.contact .btn{font-size:15px;padding:17px 27px;gap:35px}
+.contact .phone{font-size:12px;color:var(--muted);margin-top:24px}
+.contact .phone a{color:var(--ink);font-weight:650}
+.contact .location{font-size:10px;color:var(--muted);margin-top:15px;letter-spacing:.3px}
+footer{background:var(--ink);color:#b8c9d2;padding:43px 0 26px}
+.footer-top{display:flex;justify-content:space-between;align-items:center;gap:30px;padding-bottom:28px;border-bottom:1px solid #354f5f;margin-bottom:24px}
+footer .logo{color:#fff}
+footer .wordmark span{color:#9ec9c3}
+footer .wordmark small{color:#b8c9d2}
+footer .logo img{background:#fff;border-radius:5px;padding:4px;width:43px;height:48px}
+.footer-top>p{font-size:11px;text-align:right;color:#b8c9d2}
+.footer-legal{display:grid;grid-template-columns:1fr 1fr;gap:18px 55px}
+footer p{font-size:10px;line-height:1.85}
+footer a{color:#dae8e8}
+footer a:hover{color:white}
+.copyright{grid-column:1/-1;padding-top:20px;margin-top:5px;border-top:1px solid #354f5f;font-size:9px;color:#a9becb}
+@media(min-width:1500px){.hero{padding-top:92px}.hero-grid{gap:82px}h1{font-size:68px}}
+@media(max-width:1000px){.wrap{width:calc(100% - 64px)}nav{gap:20px}.hero-grid{gap:24px;grid-template-columns:1.1fr 1fr}h1{font-size:48px}.workflow-art{padding-left:10px;padding-right:6px}.paper-stack{padding:24px;margin-right:10px}.document-title{font-size:26px}.split,.founder-box{gap:45px}.steps{gap:20px}.pricing-box{gap:30px}.hero-foot{gap:18px;font-size:10px}.hero-foot span{gap:6px}}
+@media(max-width:760px){html{scroll-padding-top:145px}.wrap{width:calc(100% - 44px)}header .wrap{gap:12px;min-height:0;flex-direction:column;padding-top:16px;padding-bottom:10px}.logo img{width:34px;height:38px}.wordmark{font-size:24px}.wordmark small{font-size:8px;margin-top:6px}nav{gap:24px;width:100%;justify-content:center}nav a{font-size:12px;min-height:44px;display:inline-flex;align-items:center}nav a.cta{padding:8px 17px}.hero{padding-top:45px}.hero-grid{grid-template-columns:1fr;gap:32px}h1{font-size:clamp(41px,7.9vw,60px);max-width:580px;letter-spacing:-1.7px}.hero-copy>p{font-size:14px;max-width:580px}.hero .eyebrow{font-size:9px;letter-spacing:1.4px}.workflow-art{max-width:390px;padding-top:7px;padding-bottom:35px}.paper-stack{padding:26px 29px;margin-right:16px}.document-title{font-size:28px}.review-note{right:0;bottom:6px}.art-label{margin-bottom:20px}.hero-foot{margin-top:35px;gap:12px;font-size:10px;padding:21px 0}.hero-foot span{align-items:flex-start}.hero-foot span b{font-size:11px}.hero-foot span:nth-child(3){max-width:115px}section{padding:60px 0}h2{font-size:36px;letter-spacing:-1.3px}.section-intro{margin-bottom:30px;align-items:start}.section-note{max-width:170px;font-size:11px}.steps{grid-template-columns:repeat(2,1fr);gap:32px 25px}.step::before{margin-bottom:18px}.split{grid-template-columns:1fr;gap:12px}.split h2{max-width:none}.split .eyebrow{margin-bottom:10px}.privacy strong{font-size:23px}.privacy-boundary{margin:0 0 26px}.privacy p{font-size:13px}.pricing-box{padding:28px;gap:25px}.pricing-box ul{padding-left:24px}.pricing-top{align-items:flex-end}.pricing-top>p{max-width:150px;font-size:11px}.pricing-box .big{font-size:69px}.founder{padding-bottom:55px}.founder-box{grid-template-columns:1fr;gap:24px;padding:29px}.founder-box h2{font-size:28px}.founder-box .eyebrow{font-size:9px}.about{gap:18px}.contact{padding:59px 0 52px}.contact h2{font-size:42px}.footer-top{align-items:flex-start}.footer-top>p{max-width:160px;font-size:10px}.footer-legal{gap:18px 30px}}
+@media(max-width:420px){nav{gap:17px}.hero-cta{gap:18px}.btn{padding-inline:20px}.price-tag{font-size:12px}.hero-foot{flex-wrap:wrap;justify-content:flex-start;gap:9px 20px}.hero-foot span:nth-child(3){max-width:none}.workflow-art{width:calc(100% - 8px)}.section-intro{display:block}.section-note{max-width:none;margin-top:13px}.steps{gap:30px 22px}.step p{font-size:12px}.step h3{font-size:14px}.pricing-box{grid-template-columns:1fr;padding:27px}.pricing-box .big{font-size:74px}.pricing-box p{max-width:none}.pricing-box ul{border-left:0;border-top:1px solid var(--line);padding:17px 0 0}.pricing-top>p{max-width:116px}.founder-box{padding:25px}.about{align-items:flex-start}.monogram{width:55px;height:64px;font-size:23px}.footer-top{flex-direction:column;gap:20px}.footer-top>p{max-width:none;text-align:left}.footer-legal{grid-template-columns:1fr}.contact .phone{max-width:245px;margin-inline:auto;line-height:2}.contact .btn{font-size:14px}.contact h2{font-size:39px}}
+@media(max-width:350px){.wrap{width:calc(100% - 32px)}nav{gap:13px}nav a{font-size:11px}nav a.cta{padding-inline:13px}h1{font-size:39px}.hero-cta{gap:15px}.price-tag{font-size:11px}.hero-cta .btn{padding-inline:15px;font-size:12px;gap:15px}.paper-stack{padding:23px}.document-title{font-size:26px}.document-facts{font-size:9px}.review-note{padding:13px 16px}.plain li{padding-left:33px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+@media(max-width:760px){.hero-copy>p,.step p,.plain li,.privacy p,details p,.bio p,.pricing-box li,.pricing-box>div>p,.contact .contact-intro{font-size:15px}.step h3,details summary{font-size:15px}.contact .phone{font-size:14px}.contact .phone a{display:inline-flex;align-items:center;min-height:44px}.contact .location{font-size:12px}footer p,.footer-top>p,.copyright{font-size:12px}}
+@media print{header,.skip-link,.workflow-art,.hero-cta{display:none}body,section,#privacy,.contact,footer{background:white!important;color:black!important}.wrap{width:100%}section{padding:22px 0}h1{font-size:32px}h2{font-size:25px}.hero{padding:0}.hero-grid,.split,.founder-box{display:block}.hero-foot{margin-top:20px}#privacy h2,#privacy .eyebrow,#privacy strong,#privacy p,footer p{color:black}.steps{grid-template-columns:repeat(2,1fr)}.pricing-box{break-inside:avoid}.footer-top{display:none}details p{display:block}.footer-legal{display:block}}
 </style>
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="canonical" href="https://harboursign.ca/">
+<meta name="theme-color" content="#142f43">
 </head>
-<body>
+<body id="top">
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header>
   <div class="wrap">
-    <div class="logo">Harbour<span>Sign</span></div>
-    <nav>
+    <a class="logo" href="#top" aria-label="HarbourSign home"><img src="assets/logo.svg" width="43" height="48" alt=""><span class="wordmark">Harbour<span>Sign</span><small>Document preparation</small></span></a>
+    <nav aria-label="Main navigation">
       <a href="#how">How it works</a>
       <a href="#privacy">Privacy</a>
       <a href="#price">Pricing</a>
@@ -77,18 +175,36 @@ footer .wrap p{margin-bottom:8px;}
   </div>
 </header>
 
+<main id="main" tabindex="-1">
 <div class="hero">
   <div class="wrap">
-    <h1>Uninsured paperwork, drafted between patients — not after them.</h1>
+   <div class="hero-grid">
+    <div class="hero-copy">
+    <span class="eyebrow"><span class="dot" aria-hidden="true"></span>For family physicians · St. John's, NL</span>
+    <h1>Uninsured paperwork, drafted <em>between patients</em> — not after them.</h1>
     <p>A manual document-preparation service for family physicians in St. John's, Newfoundland and Labrador. You send the blank form and the facts. You get back a finished draft, ready for your review and signature.</p>
-    <span class="price-tag">$15 per form <small>· flat · CAD</small></span>
-    <div class="hero-cta"><a class="btn" href="#contact">Start with one form</a></div>
+    <div class="hero-cta"><a class="btn" href="#contact">Start with one form</a><span class="price-tag">$15 per form <small>FLAT · CAD</small></span></div>
+    </div>
+    <div class="workflow-art" aria-hidden="true">
+      <p class="art-label">A simpler paperwork workflow</p>
+      <div class="paper-stack">
+        <div class="paper-head"><img src="assets/logo.svg" width="30" height="34" alt=""><span>HarbourSign / Draft preparation</span></div>
+        <p class="document-kicker">From facts to finished draft</p>
+        <p class="document-title">Prepared with care.<br><span>Ready for your review.</span></p>
+        <div class="document-facts"><span class="check">✓</span> Blank form + de-identified facts</div>
+        <div class="document-lines"><i></i><i></i><i></i><i></i></div>
+        <div class="document-bottom"><span>Your review. Your signature.</span><b>ILLUSTRATIVE WORKFLOW</b></div>
+      </div>
+      <div class="review-note"><span>✓</span><p>We draft. You stay the author.<br><small>Same-business-day turnaround*</small></p></div>
+    </div>
+   </div>
+   <div class="hero-foot"><span><b aria-hidden="true">↗</b> Locally run in St. John's</span><span><b aria-hidden="true">✓</b> No patient identifiers</span><span><b aria-hidden="true">◷</b> *Before 3:00 PM, same business day</span></div>
   </div>
 </div>
 
 <section id="how">
   <div class="wrap">
-    <h2>How it works</h2>
+    <div class="section-intro"><div><span class="eyebrow">01 / The process</span><h2>How it works</h2></div><p class="section-note">You bring the facts.<br>We take care of the draft.</p></div>
     <div class="steps">
       <div class="step"><h3>Send the blank form</h3><p>Forward the insurer's blank questionnaire, employer letter request, or EI medical certificate — the blank form contains no patient information.</p></div>
       <div class="step"><h3>Send de-identified facts</h3><p>Just the essentials: patient label or initials, age, sex, relevant dates, restrictions. No names, no MCP number, no date of birth.</p></div>
@@ -98,21 +214,21 @@ footer .wrap p{margin-bottom:8px;}
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <h2>What we draft</h2>
+<section id="forms">
+  <div class="wrap split">
+    <div><span class="eyebrow">02 / The paperwork</span><h2>What we draft</h2></div>
     <ul class="plain">
-      <li><strong>Insurance questionnaires</strong> — attending physician statements and plan-member forms (Canada Life, Sun Life, Manulife, and similar).</li>
-      <li><strong>Employer letters</strong> — absence, restriction, and return-to-work correspondence requested by employers.</li>
-      <li><strong>EI medical certificates</strong> — Service Canada medical statements supporting an EI sickness claim.</li>
-      <li><strong>Other third-party forms</strong> — send it over; if it's a form you complete after the visit, it likely fits the service.</li>
+      <li><strong>Insurance questionnaires</strong> Attending physician statements and plan-member forms (Canada Life, Sun Life, Manulife, and similar).</li>
+      <li><strong>Employer letters</strong> Absence, restriction, and return-to-work correspondence requested by employers.</li>
+      <li><strong>EI medical certificates</strong> Service Canada medical statements supporting an EI sickness claim.</li>
+      <li><strong>Other third-party forms</strong> Send it over; if it's a form you complete after the visit, it likely fits the service.</li>
     </ul>
   </div>
 </section>
 
 <section id="privacy">
-  <div class="wrap">
-    <h2>Privacy by design</h2>
+  <div class="wrap split">
+    <div><span class="eyebrow">03 / Your patients, protected</span><h2>Privacy by design</h2><div class="privacy-boundary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg>Patient identity stays with your clinic.</div></div>
     <div class="privacy">
       <p><strong>We never receive patient identifiers. Not at intake, not ever.</strong> The service is built around a de-identified intake protocol: you keep the name, MCP number, and date of birth on your side, and send only what the form's content actually requires — a patient label, demographics like age and sex, and the relevant dates and restrictions.</p>
       <p>You re-identify the document on your end before printing and signing. The patient's identity never leaves your clinic, and you remain the author of every document you sign.</p>
@@ -123,10 +239,10 @@ footer .wrap p{margin-bottom:8px;}
 
 <section id="price">
   <div class="wrap">
-    <h2>Pricing</h2>
+    <div class="pricing-top"><div><span class="eyebrow">04 / Straightforward pricing</span><h2>One form. One flat fee.</h2></div><p>No subscriptions.<br>No minimums. No surprises.</p></div>
     <div class="pricing-box">
-      <div class="big">$15</div>
-      <p>per completed draft, flat. No subscriptions, no minimums, no surprises.</p>
+      <div><div class="big">$15<small>CAD</small></div>
+      <p>per completed draft, flat. No subscriptions, no minimums, no surprises.</p></div>
       <ul>
         <li>Same-business-day turnaround on forms received before 3:00 PM</li>
         <li>Invoiced per form — pay by credit card (no account needed) or e-transfer</li>
@@ -137,9 +253,10 @@ footer .wrap p{margin-bottom:8px;}
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <h2>Common questions</h2>
+<section class="faq" id="questions">
+  <div class="wrap split">
+    <div><span class="eyebrow">05 / Good to know</span><h2>Common questions</h2></div>
+    <div class="faq-list">
     <details>
       <summary>Is "HarbourSign" spelled with "harbour" or "harbor"?</summary>
       <p>Harbour, the Canadian spelling — we're in St. John's, Newfoundland and Labrador. If you arrived here searching "harbor," you're in the right place.</p>
@@ -160,40 +277,44 @@ footer .wrap p{margin-bottom:8px;}
       <summary>How do I pay?</summary>
       <p>You receive an invoice for $15 per form by email. Pay by credit card through the invoice (no account required) or by Interac e-transfer. That's it.</p>
     </details>
+    </div>
   </div>
 </section>
 
-<section>
+<section class="founder">
   <div class="wrap">
-    <h2>Who you're dealing with</h2>
+   <div class="founder-box">
+    <div><span class="eyebrow">A real person. A local service.</span><h2>Who you're dealing with</h2></div>
     <div class="about">
-      <!-- Founder photo: commit founder.jpg to the repo root, then replace the photo div below with:
-      <img class="photo" src="founder.jpg" alt="Erik Contador"> -->
-      <div class="photo">[Photo — add founder.jpg to the repo and swap in the <img> tag noted above]</div>
+<div class="monogram" role="img" aria-label="Erik Contador’s initials">EC</div>
       <div class="bio">
         <p><strong>Erik Contador</strong> — HarbourSign is run by a local, named person in St. John's, NL, not an anonymous inbox. Call the number below and a human answers.</p>
-        <p style="margin-top:8px;">[1–2 sentences of plain background: who you are, why you started this, and any relevant work history. Keep it honest and short.]</p>
       </div>
     </div>
+   </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <div class="wrap">
+    <span class="eyebrow">Less time on paperwork. Start here.</span>
     <h2>Try it with one form</h2>
-    <p style="margin-bottom:22px;">Send your next blank insurance questionnaire or employer letter request, plus the de-identified facts, and see what comes back.</p>
+    <p class="contact-intro">Send your next blank insurance questionnaire or employer letter request, plus the de-identified facts, and see what comes back.</p>
     <a class="btn" href="mailto:info@harboursign.ca">info@harboursign.ca</a>
     <p class="phone">Or call: <strong><a href="tel:+17092198089">+1 (709) 219-8089</a></strong> — answered by a human, business hours</p>
-    <p style="margin-top:14px;font-size:.9rem;color:#3c4f5c;">St. John's, Newfoundland and Labrador, Canada</p>
+    <p class="location">St. John's, Newfoundland and Labrador, Canada</p>
   </div>
 </section>
 
+</main>
 <footer>
   <div class="wrap">
-    <p><strong>HarbourSign</strong> · St. John's, NL · info@harboursign.ca · +1 (709) 219-8089</p>
+    <div class="footer-top"><a class="logo" href="#top" aria-label="HarbourSign home"><img src="assets/logo.svg" width="43" height="48" alt=""><span class="wordmark">Harbour<span>Sign</span><small>Document preparation</small></span></a><p>St. John's, NL<br><a href="mailto:info@harboursign.ca">info@harboursign.ca</a> · <a href="tel:+17092198089">+1 (709) 219-8089</a></p></div>
+    <div class="footer-legal">
     <p>A document-preparation service for physicians. We draft; you review, complete, and sign. We never receive patient identifiers.</p>
     <p>These pages describe the service in plain language and are not a substitute for professional advice. By using the service you agree to the terms provided with your first invoice, which include the de-identified intake protocol described above.</p>
-    <p>© 2026 HarbourSign. Questions or to stop receiving email from us: reply "unsubscribe" to any message or contact info@harboursign.ca.</p>
+    <p class="copyright">© 2026 HarbourSign. Questions or to stop receiving email from us: reply "unsubscribe" to any message or contact info@harboursign.ca.</p>
+    </div>
   </div>
 </footer>
 
