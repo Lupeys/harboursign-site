@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HarbourSign — Uninsured form drafting for St. John's physicians</title>
+<meta name="description" content="Manual document-preparation service for St. John's family physicians. Send the blank form and de-identified facts; receive a finished draft the same day. $15 per form.">
+<style>
+:root{--ink:#10222f;--harbour:#14486b;--sky:#3d7ea6;--foam:#f4f8fa;--line:#d8e2e8;--accent:#b3541e;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:#fff;}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px;}
+header{background:var(--harbour);color:#fff;padding:14px 0;}
+header .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.logo{font-size:1.25rem;font-weight:700;letter-spacing:.02em;}
+.logo span{color:#9cd0ea;}
+header nav a{color:#dcebf4;text-decoration:none;font-size:.9rem;margin-left:16px;}
+header nav a:hover{color:#fff;}
+.hero{background:var(--foam);border-bottom:1px solid var(--line);padding:56px 0 48px;text-align:center;}
+.hero h1{font-size:clamp(1.7rem,4.5vw,2.5rem);line-height:1.2;margin-bottom:14px;max-width:640px;margin-left:auto;margin-right:auto;}
+.hero p{max-width:560px;margin:0 auto 26px;font-size:1.05rem;color:#3c4f5c;}
+.price-tag{display:inline-block;background:var(--harbour);color:#fff;font-weight:700;font-size:1.05rem;padding:10px 22px;border-radius:6px;}
+.price-tag small{font-weight:400;opacity:.85;}
+section{padding:48px 0;}
+section:nth-of-type(even){background:var(--foam);}
+h2{font-size:1.45rem;margin-bottom:20px;color:var(--harbour);}
+.steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));counter-reset:step;}
+.step{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px;}
+.step h3{font-size:1rem;margin-bottom:6px;}
+.step p{font-size:.92rem;color:#3c4f5c;}
+.step::before{counter-increment:step;content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--sky);color:#fff;font-weight:700;font-size:.9rem;margin-bottom:10px;}
+ul.plain{list-style:none;}
+ul.plain li{padding:10px 0;border-bottom:1px solid var(--line);}
+ul.plain li:last-child{border-bottom:none;}
+.privacy{background:#fff;border-left:5px solid var(--sky);padding:20px 22px;border-radius:0 8px 8px 0;}
+.privacy p{margin-bottom:10px;}
+.privacy p:last-child{margin-bottom:0;}
+.pricing-box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:30px;text-align:center;max-width:520px;margin:0 auto;}
+.pricing-box .big{font-size:2.4rem;font-weight:800;color:var(--harbour);}
+.pricing-box ul{text-align:left;margin:18px 0 0;list-style:none;}
+.pricing-box li{padding:6px 0 6px 26px;position:relative;font-size:.95rem;}
+.pricing-box li::before{content:"✓";position:absolute;left:0;color:var(--sky);font-weight:700;}
+details{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin-bottom:10px;}
+details summary{font-weight:600;cursor:pointer;}
+details p{margin-top:10px;font-size:.95rem;color:#3c4f5c;}
+.about{display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap;}
+.about .photo{flex:0 0 160px;height:200px;background:linear-gradient(160deg,#dcebf4,#a9c8da);border-radius:10px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.85rem;color:#42607a;padding:10px;}
+.about .bio{flex:1 1 320px;}
+.contact{text-align:center;}
+.contact a.btn{display:inline-block;background:var(--harbour);color:#fff;text-decoration:none;font-weight:700;padding:14px 30px;border-radius:8px;font-size:1.05rem;}
+.contact a.btn:hover{background:var(--sky);}
+.contact .phone{margin-top:18px;font-size:1.15rem;}
+.contact .phone strong{color:var(--harbour);}
+footer{background:#10222f;color:#b8c6d2;padding:30px 0;font-size:.85rem;}
+footer a{color:#dcebf4;}
+footer .wrap p{margin-bottom:8px;}
+@media(max-width:600px){header .wrap{justify-content:center;}header nav a{margin:0 10px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">Harbour<span>Sign</span></div>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#price">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Uninsured paperwork, drafted between patients — not after them.</h1>
+    <p>A manual document-preparation service for family physicians in St. John's, Newfoundland and Labrador. You send the blank form and the facts. You get back a finished draft, ready for your review and signature.</p>
+    <span class="price-tag">$15 per form <small>· flat · CAD</small></span>
+  </div>
+</div>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><h3>Send the blank form</h3><p>Forward the insurer's blank questionnaire, employer letter request, or EI medical certificate — the blank form contains no patient information.</p></div>
+      <div class="step"><h3>Send de-identified facts</h3><p>Just the essentials: patient label or initials, age, sex, relevant dates, restrictions. No names, no MCP number, no date of birth.</p></div>
+      <div class="step"><h3>Receive your draft</h3><p>Same business day for forms received before 3:00 PM. The answer sections drafted in full, matched to the form's own structure.</p></div>
+      <div class="step"><h3>Review, sign, send</h3><p>You enter the patient's name on your end, print on clinic letterhead, sign, and deliver. You are always the author of record.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What we draft</h2>
+    <ul class="plain">
+      <li><strong>Insurance questionnaires</strong> — attending physician statements and plan-member forms (Canada Life, Sun Life, Manulife, and similar).</li>
+      <li><strong>Employer letters</strong> — absence, restriction, and return-to-work correspondence requested by employers.</li>
+      <li><strong>EI medical certificates</strong> — Service Canada medical statements supporting an EI sickness claim.</li>
+      <li><strong>Other third-party forms</strong> — send it over; if it's a form you complete after the visit, it likely fits the service.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap">
+    <h2>Privacy by design</h2>
+    <div class="privacy">
+      <p><strong>We never receive patient identifiers. Not at intake, not ever.</strong> The service is built around a de-identified intake protocol: you keep the name, MCP number, and date of birth on your side, and send only what the form's content actually requires — a patient label, demographics like age and sex, and the relevant dates and restrictions.</p>
+      <p>You re-identify the document on your end before printing and signing. The patient's identity never leaves your clinic, and you remain the author of every document you sign.</p>
+      <p>Have questions about how the workflow fits your obligations as a custodian under PHIA? Ask — we'll walk you through the protocol before you send anything.</p>
+    </div>
+  </div>
+</section>
+
+<section id="price">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <div class="pricing-box">
+      <div class="big">$15</div>
+      <p>per completed draft, flat. No subscriptions, no minimums, no surprises.</p>
+      <ul>
+        <li>Same-business-day turnaround on forms received before 3:00 PM</li>
+        <li>Invoiced per form — pay by credit card (no account needed) or e-transfer</li>
+        <li>Covered as a practice expense, not a per-patient cost</li>
+        <li>If a draft isn't right, we revise it — no charge</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Common questions</h2>
+    <details>
+      <summary>Is "HarbourSign" spelled with "harbour" or "harbor"?</summary>
+      <p>Harbour, the Canadian spelling — we're in St. John's, Newfoundland and Labrador. If you arrived here searching "harbor," you're in the right place.</p>
+    </details>
+    <details>
+      <summary>Do you ever see patient names or health-care numbers?</summary>
+      <p>No. The intake protocol excludes names, MCP numbers, and dates of birth by design. You send a blank form plus de-identified facts; you add the patient's identity back on your side before printing and signing.</p>
+    </details>
+    <details>
+      <summary>Who signs the finished document?</summary>
+      <p>You do — always. We prepare the draft; you review it, complete it, print it on your clinic letterhead, and sign it. The physician of record authors every document that leaves the clinic.</p>
+    </details>
+    <details>
+      <summary>What about sick notes for patients still in the office?</summary>
+      <p>This service is built for the forms that arrive after the visit — by fax or email — where same-day drafting matters most. Sick notes needed before a patient leaves are best completed in-clinic during the visit.</p>
+    </details>
+    <details>
+      <summary>How do I pay?</summary>
+      <p>You receive an invoice for $15 per form by email. Pay by credit card through the invoice (no account required) or by Interac e-transfer. That's it.</p>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Who you're dealing with</h2>
+    <div class="about">
+      <div class="photo">[Founder photo — replace with a real headshot, head and shoulders, plain background]</div>
+      <div class="bio">
+        <p><strong>[FOUNDER NAME]</strong> — HarbourSign is run by a local, named person in St. John's, NL, not an anonymous inbox. Call the number below and a human answers.</p>
+        <p style="margin-top:8px;">[1–2 sentences of plain background: who you are, why you started this, and any relevant work history. Keep it honest and short.]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Try it with one form</h2>
+    <p style="margin-bottom:22px;">Send your next blank insurance questionnaire or employer letter request, plus the de-identified facts, and see what comes back.</p>
+    <a class="btn" href="mailto:info@harboursign.ca">info@harboursign.ca</a>
+    <p class="phone">Or call: <strong>[ST. JOHN'S PHONE — answered by a human, business hours]</strong></p>
+    <p style="margin-top:14px;font-size:.9rem;color:#3c4f5c;">St. John's, Newfoundland and Labrador, Canada</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>HarbourSign</strong> · St. John's, NL · info@harboursign.ca · [phone]</p>
+    <p>A document-preparation service for physicians. We draft; you review, complete, and sign. We never receive patient identifiers.</p>
+    <p>These pages describe the service in plain language and are not a substitute for professional advice. By using the service you agree to the terms provided with your first invoice, which include the de-identified intake protocol described above.</p>
+    <p>© 2026 HarbourSign. Questions or to stop receiving email from us: reply "unsubscribe" to any message or contact info@harboursign.ca.</p>
+  </div>
+</footer>
+
+</body>
+</html>
