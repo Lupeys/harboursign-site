@@ -1,0 +1,13 @@
+# HarbourSign
+
+> Uninsured medical document preparation service for family physicians in St. John's, Newfoundland and Labrador.
+
+## Core Service
+- Manual document preparation for un-insured paperwork (insurance forms, employer letters, EI certificates).
+- Flat fee: $15 CAD per completed form.
+- De-identified intake protocol: Physicians send blank forms and de-identified facts; patient identifiers never leave the clinic.
+
+## Key Links
+- [Overview](https://harboursign.ca/#how)
+- [Pricing](https://harboursign.ca/#price)
+- [Contact](mailto:info@harboursign.ca)
